@@ -47,7 +47,7 @@ RSpec.describe "Day 1: Expense report" do
     expect(multiply(2020,File.readlines("day1_input_test.txt"))).to eq(514579)
   end
   
-  it "multiply_three results in 514579" do
+  it "multiply_three results in 241861950" do
     expect(multiply_three(2020,File.readlines("day1_input_test.txt"))).to eq(241861950)
   end
  
