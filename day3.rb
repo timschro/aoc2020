@@ -1,5 +1,4 @@
 # https://adventofcode.com/2020/day/3
-$map = []
 
 def set_map(file)
   $map = File.read(file).split("\n")
@@ -11,7 +10,7 @@ def find_trajectory(start_x=0, start_y=0, right, down)
   y = start_y + down
   $map[y][x] = "O" if $map[y][x] == "."
   $map[y][x] = "X" if $map[y][x] == "#"
-  find_trajectory(x,y,right,down) unless y + 1 >= $map.length
+  find_trajectory(x,y,right,down) unless y + 2 > $map.length
 end
 
 def calculate_trees(right=3,down=1)
@@ -29,18 +28,14 @@ def calculate_trees_multiple
   product
 end
 
-
 if $0 == __FILE__
 $filename = "day3_input.txt"
  puts "Result Part 1: #{calculate_trees}"
  puts "Result Part 2: #{calculate_trees_multiple}"
- 
 end
-
 
 ########## RSpec tests
 # Run tests: ´rspec day3.rb´
-
 require "rspec"
 
 RSpec.describe "Day 3: Toboggan Trajectory" do
