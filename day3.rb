@@ -31,7 +31,7 @@ end
 
 
 if $0 == __FILE__
-  $filename = "day3_input.txt"
+$filename = "day3_input.txt"
  puts "Result Part 1: #{calculate_trees}"
  puts "Result Part 2: #{calculate_trees_multiple}"
  
@@ -39,7 +39,7 @@ end
 
 
 ########## RSpec tests
-# Run tests: ´rspec day1.rb´
+# Run tests: ´rspec day3.rb´
 
 require "rspec"
 
@@ -53,7 +53,4 @@ RSpec.describe "Day 3: Toboggan Trajectory" do
   it "find the product of all ways" do
     expect(calculate_trees_multiple).to eq(336)
   end
-  
-
- 
 end
