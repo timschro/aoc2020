@@ -7,8 +7,7 @@ REPLACEMENTS = {'F' => '0', 'B' => '1', 'R' => '1', 'L' => '0'}
 def check_boardingpasses(passes)
   passes.each do |pass|
     pass.gsub!(Regexp.union(REPLACEMENTS.keys), REPLACEMENTS)
-    id = pass[0,7].to_i(2) * 8 + pass[7,4].to_i(2)
-    $ids << id
+    $ids << pass[0,7].to_i(2) * 8 + pass[7,4].to_i(2)
   end
   $ids.max
 end
