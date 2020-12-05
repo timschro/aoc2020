@@ -1,11 +1,12 @@
 # https://adventofcode.com/2020/day/5
 
 $ids = []
+REPLACEMENTS = {'F' => '0', 'B' => '1', 'R' => '1', 'L' => '0'}
+
 
 def check_boardingpasses(passes)
   passes.each do |pass|
-    replacements = {'F' => '0', 'B' => '1', 'R' => '1', 'L' => '0'}
-    pass.gsub!(Regexp.union(replacements.keys), replacements)
+    pass.gsub!(Regexp.union(REPLACEMENTS.keys), REPLACEMENTS)
     id = pass[0,7].to_i(2) * 8 + pass[7,4].to_i(2)
     $ids << id
   end
